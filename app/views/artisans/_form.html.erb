@@ -1,0 +1,66 @@
+<%= form_for @artisan, :html => { :class => "form-horizontal artisan" } do |f| %>
+
+    <% if @artisan.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@artisan.errors.count, "error") %> prohibited this artisan from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @artisan.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:description]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :firstname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :firstname, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:firstname]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :lastname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lastname, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:lastname]) %>
+  </div>
+   <div class="control-group">
+    <%= f.label :society, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :society, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:society]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:phone]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location, :class => 'form-control' %>
+    </div>
+    <%= error_span(@artisan[:location]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            artisans_path, :class => 'btn btn-default' %>
+
+<% end %>
