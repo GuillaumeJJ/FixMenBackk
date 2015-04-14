@@ -7,4 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Artisan.create
+Artisan.create(
+	description: "Serrurier",
+	firstname: "Eric",
+	lastname: "Caron",
+	society: "Caron SA",
+	phone:"0678320865",
+	location: "3 rue François 1er"
+	)
